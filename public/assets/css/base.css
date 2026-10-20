@@ -1,0 +1,120 @@
+/* Identidade visual elisa. (aprovada em out/2026)
+   Paleta clara, texto sempre escuro sobre as cores, cantos arredondados. */
+
+:root {
+  --creme: #FBF6EE;
+  --creme-2: #F3ECE0;
+  --terracota: #D9826D;
+  --salvia: #ACBC80;
+  --areia: #E9C17E;
+  --rose: #E8A693;
+  --oliva: #55603F;
+  --grafite: #2E2A24;
+
+  --texto-suave: #6B655B;
+  --borda: #E3DACB;
+  --branco: #FFFDF9;
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+
+  --raio: 14px;
+  --raio-g: 22px;
+  --sombra: 0 1px 2px rgba(46, 42, 36, .05), 0 8px 24px rgba(46, 42, 36, .06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--grafite);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1.12;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+h1 em, h2 em, h3 em { font-style: italic; color: var(--terracota); }
+
+p { margin: 0; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+/* Marca: "elisa." com ponto terracota */
+.marca {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--grafite);
+}
+.marca .ponto { color: var(--terracota); }
+
+/* Ícone: quadradinho oliva com "elisa." creme e ponto areia */
+.icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--oliva);
+  color: var(--creme);
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 13px;
+  text-decoration: none;
+}
+.icone .ponto { color: var(--areia); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: 500 15px/1.2 var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:disabled { opacity: .5; cursor: default; transform: none; }
+.btn-primario { background: var(--grafite); color: var(--creme); }
+.btn-terracota { background: var(--terracota); color: var(--grafite); }
+.btn-contorno { background: transparent; border-color: var(--grafite); color: var(--grafite); }
+.btn-leve { background: var(--creme-2); color: var(--grafite); }
+.btn-pequeno { padding: 7px 14px; font-size: 13px; }
+
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+:focus-visible { outline: 2px solid var(--oliva); outline-offset: 2px; }
+
+[hidden] { display: none !important; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

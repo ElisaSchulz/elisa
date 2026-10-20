@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Estúdio · elisa.</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=DM+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="area.css">
+</head>
+<body>
+
+<!-- Tela de entrada -->
+<section id="tela-login" class="login" hidden>
+  <form id="form-login" class="login-caixa">
+    <span class="icone icone-login">elisa<span class="ponto">.</span></span>
+    <h1>Estúdio</h1>
+    <p class="mono">Área privada</p>
+    <label>E-mail
+      <input type="email" name="email" autocomplete="username" required>
+    </label>
+    <label>Senha
+      <input type="password" name="senha" autocomplete="current-password" required>
+    </label>
+    <button class="btn btn-primario" type="submit">Entrar</button>
+    <p class="login-msg" id="login-msg" role="alert"></p>
+    <a class="login-voltar" href="../">Voltar para o site</a>
+  </form>
+</section>
+
+<!-- Aplicativo -->
+<div id="app" class="app" hidden>
+  <aside class="lateral">
+    <a class="marca" href="#painel">elisa<span class="ponto">.</span></a>
+    <p class="mono lateral-sub">Estúdio</p>
+    <nav class="menu" id="menu">
+      <a href="#painel" data-rota="painel">Visão geral</a>
+      <a href="#cronograma" data-rota="cronograma">Cronograma</a>
+      <a href="#documentos" data-rota="documentos">Documentos</a>
+      <a href="#conteudos" data-rota="conteudos">Conteúdos gratuitos</a>
+      <a href="#identidade" data-rota="identidade">Identidade visual</a>
+    </nav>
+    <div class="lateral-rodape">
+      <a class="btn btn-leve btn-pequeno" href="../" target="_blank" rel="noopener">Ver site</a>
+      <button class="btn btn-leve btn-pequeno" id="btn-sair" type="button">Sair</button>
+    </div>
+  </aside>
+  <main class="conteudo" id="conteudo" tabindex="-1"></main>
+</div>
+
+<!-- Aviso de configuração -->
+<section id="tela-config" class="login" hidden>
+  <div class="login-caixa">
+    <span class="icone icone-login">elisa<span class="ponto">.</span></span>
+    <h1>Quase lá</h1>
+    <p>O Supabase ainda não foi configurado. Preencha <code>SUPABASE_URL</code> e <code>SUPABASE_ANON_KEY</code> em <code>public/assets/js/config.js</code>. O passo a passo está no README do repositório.</p>
+    <a class="login-voltar" href="../">Voltar para o site</a>
+  </div>
+</section>
+
+<dialog id="dialogo" class="dialogo"></dialog>
+<div id="aviso" class="aviso-flutuante" role="status" aria-live="polite"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
