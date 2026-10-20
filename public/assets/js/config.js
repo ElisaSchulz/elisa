@@ -1,11 +1,11 @@
 // Configuração do site. Este arquivo é público: só coloque aqui dados que podem ser vistos por qualquer pessoa.
-// A chave "anon" do Supabase foi feita para ficar no navegador. Quem protege os dados são as regras (RLS)
-// definidas em supabase/schema.sql. NUNCA coloque aqui a chave "service_role".
+// A chave "publishable" (antiga "anon") do Supabase foi feita para ficar no navegador. Quem protege os dados são as regras (RLS)
+// definidas em supabase/schema.sql. NUNCA coloque aqui a chave "secret" (antiga "service_role").
 
 export const CONFIG = {
   // Supabase: Project Settings > API
-  SUPABASE_URL: '',       // ex.: 'https://abcdefgh.supabase.co'
-  SUPABASE_ANON_KEY: '',  // a chave "anon public"
+  SUPABASE_URL: 'https://otgeahpikuufhzerqnkc.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_DUeXjLkgYv6dx7ySDcZxAw_E07SKizC',
 
   // Instagram: deixe vazio enquanto o perfil não estiver pronto (os botões ficam escondidos)
   INSTAGRAM_HANDLE: '',   // ex.: 'elisaschulz' (sem @)

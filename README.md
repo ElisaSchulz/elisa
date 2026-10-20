@@ -34,13 +34,13 @@ supabase/
    insert into public.admins (user_id)
    select id from auth.users where email = 'SEU_EMAIL_AQUI';
    ```
-6. **Project Settings > API**: copie a **Project URL** e a chave **anon public**.
+6. **Project Settings > API**: copie a **Project URL** e a chave **publishable** (nos projetos antigos se chama **anon public**).
 
 ### 2. Configurar o site
 
 Edite `public/assets/js/config.js` e preencha `SUPABASE_URL`, `SUPABASE_ANON_KEY` e, quando o perfil estiver pronto, `INSTAGRAM_HANDLE`.
 
-A chave `anon` foi feita para ficar visível no navegador: quem protege os dados são as regras do `schema.sql`, que só deixam a usuária listada em `admins` ler ou alterar o cronograma, os documentos e os links. Nunca coloque a chave `service_role` no site.
+A chave publishable (ou `anon`) foi feita para ficar visível no navegador: quem protege os dados são as regras do `schema.sql`, que só deixam a usuária listada em `admins` ler ou alterar o cronograma, os documentos e os links. Nunca coloque a chave secret (ou `service_role`) no site.
 
 ### 3. Publicar no GitHub Pages
 

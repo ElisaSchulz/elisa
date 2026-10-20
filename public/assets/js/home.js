@@ -1,5 +1,4 @@
-import { CONFIG, CONTEUDOS_PADRAO } from './config.js';
-import { supabase } from './supabase.js';
+import { CONFIG, CONTEUDOS_PADRAO, supabaseConfigurado } from './config.js';
 
 const TIPOS = {
   ebook: { rotulo: 'Ebook', acao: 'Baixar o ebook' },
@@ -15,7 +14,14 @@ function esc(s) {
 }
 
 async function carregarConteudos() {
-  if (!supabase) return CONTEUDOS_PADRAO;
+  if (!supabaseConfigurado()) return CONTEUDOS_PADRAO;
+  // Importa o Supabase só aqui: se a biblioteca não carregar, a página mostra os conteúdos padrão
+  let supabase;
+  try {
+    ({ supabase } = await import('./supabase.js'));
+  } catch {
+    return CONTEUDOS_PADRAO;
+  }
   const { data, error } = await supabase
     .from('conteudos')
     .select('titulo, descricao, tipo, arquivo_url, capa_url, cor, destaque')
